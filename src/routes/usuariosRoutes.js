@@ -43,8 +43,7 @@ router.delete('/:id', verificarToken, eliminarUsuario);
 router.get('/favoritos/usuario/:usuario_id', verificarToken, obtenerFavoritosPorUsuario);
 router.post('/favoritos', verificarToken, agregarFavorito);
 router.get('/favoritos/:id', verificarToken, obtenerFavoritoPorId);
-router.delete('/favoritos/:id', verificarToken, eliminarFavorito);
-
+router.delete('/favoritos/:usuario_id/:comercio_id', verificarToken, eliminarFavorito);
 // ==========================================
 // 🛡️ MÓDULO: ROLES Y PERMISOS
 // ==========================================
