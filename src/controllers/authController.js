@@ -52,4 +52,6 @@ const loginUsuario = async (req, res) => {
     }
 };
 
+
+
 module.exports = { registrarUsuario, loginUsuario };

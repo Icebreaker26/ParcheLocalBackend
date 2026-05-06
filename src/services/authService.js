@@ -28,7 +28,7 @@ const registrar = async (nombre, email, password) => {
 
 const login = async (email, password) => {
     // 1. Buscamos al usuario (tiene que estar activo)
-    const query = 'SELECT id, nombre, password_hash, rol_id FROM usuarios WHERE email = $1 AND activo = TRUE';
+    const query = 'SELECT id, nombre, email, password_hash, rol_id FROM usuarios WHERE email = $1 AND activo = TRUE';
     const resultado = await pool.query(query, [email]);
 
     if (resultado.rowCount === 0) {
@@ -58,6 +58,7 @@ const login = async (email, password) => {
         usuario: {
             id: usuario.id,
             nombre: usuario.nombre,
+            email: usuario.email,
             rol_id: usuario.rol_id
         }
     };
